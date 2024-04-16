@@ -113,6 +113,28 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
     implementation("com.facebook.react:flipper-integration")
+    implementation files('libs/vanstoneSdkClient-noemv.jar')
+    implementation files('libs/AMEX.jar')
+    implementation files('libs/AppSdkAidl.jar')
+    implementation files('libs/CH34xUARTDriver.jar')
+    implementation files('libs/Common.jar')
+    implementation files('libs/dpas.jar')
+    implementation files('libs/EMV.jar')
+    implementation files('libs/EMVGenAAC.jar')
+    implementation files('libs/joda-money-1.0.1.jar')
+    implementation files('libs/JSpeedy.jar')
+    implementation files('libs/MIR.jar')
+    implementation files('libs/PayPass.jar')
+    implementation files('libs/PayPassGenAAC.jar')
+    implementation files('libs/PayWave.jar')
+    implementation files('libs/PURE.jar')
+    implementation files('libs/qUICS.jar')
+    implementation files('libs/RUPAY.jar')
+    implementation files('libs/zxing.jar')
+
+    implementation 'net.danlew:android.joda:2.9.5.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'net.danlew:android.joda:2.9.5.1'
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

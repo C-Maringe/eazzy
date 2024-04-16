@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image, NativeModules } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
@@ -7,6 +7,7 @@ import {
 
 import { components } from '../../components';
 import { theme } from '../../constants';
+import Button from '../../components/Button';
 
 const transactions = [
     {
@@ -156,11 +157,24 @@ const Dashboard = () => {
         );
     };
 
+    const { CalendarModule } = NativeModules;
+    console.log(CalendarModule)
+
+    const onPress = () => {
+        console.log('We will invoke the native module here!');
+        CalendarModule.createCalendarEvent('testName', 'testLocation');
+    };
+
     const renderContent = () => {
         return (
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 {renderCards()}
                 {renderTransactions()}
+                <Button
+                    title="Click to invoke your native module!"
+                    color="#841584"
+                    onPress={onPress}
+                />
             </ScrollView>
         );
     };
